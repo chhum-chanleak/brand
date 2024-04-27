@@ -20,11 +20,29 @@
           <li><a href="#">Gallery</a></li>
           <li><a href="#">Feedback</a></li>
         </ul>
-        <button class="btn ellipsis-btn">
+        <button class="btn ellipsis-btn" onclick="{
+          menu();
+        }">
           Menu
         </button>
       </nav>
     </header>
+
+    <main>
+      <div class="dropdown-menu">
+      </div>
+    </main>
   </div>
+
+  <script>
+
+    function menu() {
+
+      dMenu = document.querySelector('.dropdown-menu');
+
+      dMenu.innerHTML = 'Hello, world!'
+    }
+
+  </script>
 </body>
 </html>
