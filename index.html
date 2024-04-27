@@ -20,7 +20,7 @@
           <li><a href="#">Gallery</a></li>
           <li><a href="#">Feedback</a></li>
         </ul>
-        <button class="btn ellipsis-btn" onclick="{
+        <button class="btn" onclick="{
           menu();
         }">
           Menu
@@ -29,19 +29,32 @@
     </header>
 
     <main>
-      <div class="dropdown-menu">
-      </div>
+      <nav class="dropdown-menu">
+      </nav>
     </main>
   </div>
 
   <script>
 
     function menu() {
+      classValue = document.querySelector(".dropdown-menu");
+      const list = `<ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>`;
 
-      dMenu = document.querySelector('.dropdown-menu');
+      if (classValue.innerHTML === "") {
+        classValue.innerHTML = list;
+        document.querySelector('.btn').innerHTML = 'X';
+      } else {
+        classValue.innerHTML = "";
+        document.querySelector('.btn').innerHTML = 'Menu';
+      }
 
-      dMenu.innerHTML = 'Hello, world!'
-    }
+    }  
 
   </script>
 </body>
